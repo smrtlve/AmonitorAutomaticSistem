@@ -64,11 +64,18 @@
                      <th>Log PPM Awal</th>
                      <th>Log PPM Akhir</th>
                      <th>Durasi Pembersihan (/s)</th></tr>";
+
+          //proses seleksi
+          //membuat variabel array untuk menampung data yg diseleksi
           $tampung = array();
+          //untuk kolom data
           $tampung['awal'] = array();
+          //untuk kolom data2
           $tampung['akhir'] = array();
           while ($tampil = $stmt->fetch(PDO::FETCH_OBJ)){
+                //cek apakah data tidak kosong
                 if ($tampil->data != '') {
+                  //jika data tidak kosong maka 1 baris nilai di data tadi akan ditampung di variabel array awal
                   $tampung['awal'][] = array(
                     'waktu' => date('H:i:s', strtotime($tampil->waktu)), 
                     'tanggal' => date('d M Y', strtotime($tampil->waktu)), 
@@ -76,7 +83,10 @@
                     'durasi' => date('i:s', strtotime($tampil->waktu)) 
                   );
                 }
+
+                //cek apakah data2 kosong
                 if ($tampil->data_2 != '') {
+                  //jika data tidak kosong maka 1 baris nilai di data tadi akan ditampung di variabel array awal
                   $tampung['akhir'][] = array(
                     'waktu' => date('H:i:s', strtotime($tampil->waktu)), 
                     'tanggal' => date('d M Y', strtotime($tampil->waktu)), 
@@ -85,15 +95,21 @@
                   );
                 }
               
+                //jika data dan data2 kosong, maka tidak akan dieksekusi
           }
           
+          //proses output ke tabel
           foreach ($tampung['akhir'] as $key => $value) {
               echo "<tr align=center>";
               echo "<td>" . $value['waktu'] . "</td>";
               echo "<td>" . $value['tanggal'] . "</td>";
               echo "<td>" . $tampung['awal'][$key]['data'] . "</td>";
               echo "<td>" . $value['data'] . "</td>";
+
+              //proses pengurangan durasi
+              //ini durasi dari array data2
               $date1 = new DateTime($value['waktu']);
+              //ini durasi dari array data
               $date2 = new DateTime($tampung['awal'][$key]['waktu']);
               $diff = $date1->diff($date2);
               // var_dump($diff);
