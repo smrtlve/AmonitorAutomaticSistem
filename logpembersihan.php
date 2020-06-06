@@ -64,13 +64,41 @@
                      <th>Log PPM Awal</th>
                      <th>Log PPM Akhir</th>
                      <th>Durasi Pembersihan (/s)</th></tr>";
+          $tampung = array();
+          $tampung['awal'] = array();
+          $tampung['akhir'] = array();
           while ($tampil = $stmt->fetch(PDO::FETCH_OBJ)){
+                if ($tampil->data != '') {
+                  $tampung['awal'][] = array(
+                    'waktu' => date('H:i:s', strtotime($tampil->waktu)), 
+                    'tanggal' => date('d M Y', strtotime($tampil->waktu)), 
+                    'data' => $tampil->data, 
+                    'durasi' => date('i:s', strtotime($tampil->waktu)) 
+                  );
+                }
+                if ($tampil->data_2 != '') {
+                  $tampung['akhir'][] = array(
+                    'waktu' => date('H:i:s', strtotime($tampil->waktu)), 
+                    'tanggal' => date('d M Y', strtotime($tampil->waktu)), 
+                    'data' => $tampil->data_2, 
+                    'durasi' => date('i:s', strtotime($tampil->waktu)) 
+                  );
+                }
+              
+          }
+          
+          foreach ($tampung['akhir'] as $key => $value) {
               echo "<tr align=center>";
-              echo "<td>" . date('H:i:s', strtotime($tampil->waktu)) . "</td>";
-              echo "<td>" . date('d M Y', strtotime($tampil->waktu)) . "</td>";
-              echo "<td>" . $tampil->data . "</td>";
-              echo "<td>" . $tampil->data_2 . "</td>";
-              echo "<td>" . date('i:s', strtotime($tampil->waktu)) . "</td>";
+              echo "<td>" . $value['waktu'] . "</td>";
+              echo "<td>" . $value['tanggal'] . "</td>";
+              echo "<td>" . $tampung['awal'][$key]['data'] . "</td>";
+              echo "<td>" . $value['data'] . "</td>";
+              $date1 = new DateTime($value['waktu']);
+              $date2 = new DateTime($tampung['awal'][$key]['waktu']);
+              $diff = $date1->diff($date2);
+              // var_dump($diff);
+              // die();
+              echo "<td>" . $diff->format('%s'). "</td>";
               echo "</tr>";
           }
           echo "</div>";
