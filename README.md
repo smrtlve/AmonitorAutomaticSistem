@@ -1,44 +1,42 @@
 # AmonitorAutomaticSistem
-# Tak upload sisan file arduino e, format e .cpp, be e butuh ndelok tutuk ndik push data e
 
 =======================================================================================================
-# Fuction2 sing tak bikin ndik main.cpp (code arduino ne).
+# Fuction dalam program arduino.
 # void setup () 
-//abaikan iki basic e arduino
+//function wajib
 # void loop () 
-//basic e arduino funsi e gae nge loop progam (istilah e gae jalankan sistem program e ndik kene)
+//fuction wajib untuk looping program
 # void stepPer() 
-// abaikan disik g tak gae
+// abaikan 
 
 
 # void hitungPPM () 
-// Iki gae ngitung nilai PPM, hasil e tak lempar ndik variabel "float average"
+// untuk menghitung nilai PPM, hasil di arahkan ke variabel "float average"
 
 
 # void database() 
-// iki gae push data nang index.php, masuk e ndik db datasensor, value e ndik data
-push data e ke db ini, ke add.php
+// untuk push data ke index.php, masuk nya di db datasensor, value ke data
+push datanya ke db ini, ke add.php
 String url = "/amonitor/add.php?data=";
 url += average;
 
 
 # void database2() 
-//iki push data nang logpembersihan.php, masuk e ndik db dataswiper, value e ndik data (iki sing sebagai ppm awal)
-push data e ke db ini, ke add2.php
+//push data ke logpembersihan.php, masuk di db dataswiper, value nya di data (sebagai ppm awal)
+push data ke db ini, ke add2.php
 String url = "/amonitor/add2.php?data=";
 url += average;
 
 
 # void database3() 
-//iki push data nang logpembersihan.php, masuk e ndik db dataswiper, value e ndik data_2 (iki sing sebagai ppm akhir)
-push data e ke db ini, ke add3.php
+//push data ke logpembersihan.php, masuk di db dataswiper, value nya di data_2 (sebagai ppm akhir)
+push data ke ke db ini, ke add3.php
 String url = "/amonitor/add3.php?data_2=";
 url += average;
 
 
 # void stepPer2()
-//iki gae mekanisme swiper pembersihan otomatis e
-//anggap ae ketika iki fuction iki di panggil langsung eksekusi pembersihan
+//mekanisme swiper pembersihan otomatis
 //disini juga ada logic untuk ngirim data ppm akhir
 if (ppm <=24){
       Serial.println("Mengirim data ppm akhir : "+ (String) average +" ke logging swiper");
@@ -47,7 +45,7 @@ if (ppm <=24){
     }
 
 # void tbTele()
-//iki gae push notif ke telegram, ambik request konfirmasi dari user
+//push notif ke telegram, dan request konfirmasi dari user
 
 //push notif nya ke 
     Serial.println("Kadar Amonia : " + (String)average);
@@ -67,9 +65,9 @@ if (ppm <=24){
     stepPer2();
 
 # void logikaAksi()
-//iki gae jalankan kabeh program e dengan kondisi if sing ws tak tentukan ndik code e..
+//Untuk jalankan semua program dengan kondisi if yang sudah ditentukan sebulumnya.
 
-//di jika if memenuhi akan eksekusi perintah
+//jika if memenuhi akan eksekusi perintah
     konfirmasi= true;
     kondisiSwiper = true;
     dataBase(); 
@@ -102,10 +100,10 @@ if (ppm <=24){
 3. sistem looping ulang ke kondisi pembacaan nilai ppm.
  
 
-ndik file .cpp iku aku ws bikin fuction, database(), database2(), database3().
+di file .cpp ada fuction, database(), database2(), database3().
 penjelasan
-1. database(), iku push data nang index.php, masuk e ndik db datasensor, value e ndik data
-2. database2(), iku push data nang logpembersihan.php, masuk e ndik db dataswiper, value e ndik data (iki sing sebagai ppm awal)
-3. database3(), iku push data nang logpembersihan.php, masuk e ndik db dataswiper, value e ndik data_2 (iki sing sebagai ppm akhir)
+1. database(), untuk push data ke index.php, masuknya ke db datasensor, value nya data
+2. database2(), untuk push data ke logpembersihan.php, masuknya ke db dataswiper, value nya data (sebagai ppm awal)
+3. database3(), untuk push data ke logpembersihan.php, masuknya ke db dataswiper, value nya data_2 (sebagai ppm akhir)
 .
-oh iyo masing2 e nge get e nggae add.php, ambik add2.php, asline iso di dadi no siji ndik add.php, tapi aku durung ngerti carane, makane malih nggae add2.php XD..
+Masing2nya me - get menggunakan add.php, dan add2.php.
