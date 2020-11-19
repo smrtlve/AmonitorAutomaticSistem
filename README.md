@@ -76,7 +76,7 @@ if (ppm <=24){
 ===============================================================================================
 
 
-# Algoritma sistem e
+# Algoritma sistem
 1. nilai ppm di baca function
    hitungPPM(); data hasil hitung di simpan ke "float average"
    
