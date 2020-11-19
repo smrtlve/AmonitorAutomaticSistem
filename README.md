@@ -1,14 +1,24 @@
 # AmonitorAutomaticSistem
 
-=======================================================================================================
-# Fuction dalam program arduino.
-# void setup () 
-//function wajib
-# void loop () 
-//fuction wajib untuk looping program
-# void stepPer() 
-// abaikan 
+## Fuction dalam program arduino.
 
+Function wajib
+
+```sh
+void setup () 
+```
+
+Fuction wajib untuk looping program
+
+```sh
+void loop () 
+```
+
+Abaikan
+
+```sh
+void stepPer() 
+```
 
 # void hitungPPM () 
 // untuk menghitung nilai PPM, hasil di arahkan ke variabel "float average"
