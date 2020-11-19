@@ -3,19 +3,16 @@
 ## Fuction dalam program arduino.
 
 Function wajib
-
 ```sh
 void setup () 
 ```
 
 Fuction wajib untuk looping program
-
 ```sh
 void loop () 
 ```
 
 Abaikan
-
 ```sh
 void stepPer() 
 ```
