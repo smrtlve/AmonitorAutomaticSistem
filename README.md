@@ -28,17 +28,18 @@ void database()
 Untuk push data ke index.php, masuk nya di db datasensor, value ke data
 ```
 ```sh
-push datanya ke db ini, ke add.php
+masuk ke db ini, ke add.php
 String url = "/amonitor/add.php?data=";
 url += average;
 ```
 
-Abaikan
 ```sh
-void stepPer() 
+void database2()
+push data ke logpembersihan.php, masuk di db dataswiper, value nya di data (sebagai ppm awal)
 ```
-# void database2() 
-//push data ke logpembersihan.php, masuk di db dataswiper, value nya di data (sebagai ppm awal)
+
+# 
+//
 push data ke db ini, ke add2.php
 String url = "/amonitor/add2.php?data=";
 url += average;
