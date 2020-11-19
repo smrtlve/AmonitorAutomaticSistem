@@ -1,30 +1,31 @@
-# AmonitorAutomaticSistem
+# Amonitor Automatic System
 
 ## Fuction dalam program arduino.
 
-Function wajib
 ```sh
 void setup () 
+Function wajib
 ```
 
-Fuction wajib untuk looping program
 ```sh
 void loop () 
+Fuction wajib untuk looping program
 ```
 
-Abaikan
 ```sh
 void stepPer() 
+Abaikan
 ```
 
-Untuk menghitung nilai PPM, hasil di arahkan ke variabel "float average"
 ```sh
 void hitungPPM () 
+Untuk menghitung nilai PPM, hasil di arahkan ke variabel "float average"
 ```
 
-Untuk push data ke index.php, masuk nya di db datasensor, value ke data
+Push data :
 ```sh
 void database()
+Untuk push data ke index.php, masuk nya di db datasensor, value ke data
 ```
 ```sh
 push datanya ke db ini, ke add.php
