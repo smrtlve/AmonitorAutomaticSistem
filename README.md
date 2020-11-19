@@ -17,31 +17,45 @@ Abaikan
 void stepPer() 
 ```
 
-# void hitungPPM () 
-// untuk menghitung nilai PPM, hasil di arahkan ke variabel "float average"
+Untuk menghitung nilai PPM, hasil di arahkan ke variabel "float average"
+```sh
+void hitungPPM () 
+```
 
-
-# void database() 
-// untuk push data ke index.php, masuk nya di db datasensor, value ke data
+Untuk push data ke index.php, masuk nya di db datasensor, value ke data
+```sh
+void database()
+```
+```sh
 push datanya ke db ini, ke add.php
 String url = "/amonitor/add.php?data=";
 url += average;
+```
 
-
+Abaikan
+```sh
+void stepPer() 
+```
 # void database2() 
 //push data ke logpembersihan.php, masuk di db dataswiper, value nya di data (sebagai ppm awal)
 push data ke db ini, ke add2.php
 String url = "/amonitor/add2.php?data=";
 url += average;
 
-
+Abaikan
+```sh
+void stepPer() 
+```
 # void database3() 
 //push data ke logpembersihan.php, masuk di db dataswiper, value nya di data_2 (sebagai ppm akhir)
 push data ke ke db ini, ke add3.php
 String url = "/amonitor/add3.php?data_2=";
 url += average;
 
-
+Abaikan
+```sh
+void stepPer() 
+```
 # void stepPer2()
 //mekanisme swiper pembersihan otomatis
 //disini juga ada logic untuk ngirim data ppm akhir
@@ -51,6 +65,10 @@ if (ppm <=24){
       kondisiSwiper = false;
     }
 
+Abaikan
+```sh
+void stepPer() 
+```
 # void tbTele()
 //push notif ke telegram, dan request konfirmasi dari user
 
@@ -71,6 +89,10 @@ if (ppm <=24){
 //sistem yang dijalankan fuction
     stepPer2();
 
+Abaikan
+```sh
+void stepPer() 
+```
 # void logikaAksi()
 //Untuk jalankan semua program dengan kondisi if yang sudah ditentukan sebulumnya.
 
